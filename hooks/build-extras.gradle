@@ -1,0 +1,19 @@
+// build-extras.gradle
+// Additional Gradle configuration for the Android build
+
+android {
+    bundle {
+        language {
+            // Don't split by language (game has its own i18n)
+            enableSplit = false
+        }
+        density {
+            // Don't split by density (game uses its own asset loading)
+            enableSplit = false
+        }
+        abi {
+            // Do split by ABI for smaller downloads
+            enableSplit = true
+        }
+    }
+}
